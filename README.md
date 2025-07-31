@@ -7,3 +7,4 @@ Methods: We analyzed data from 9,489 participants in the Mashhad Stroke and Hear
 Results: The highest-performing ML model (CatBoost) on the comprehensive risk factor set achieved superior performance (AUC: 0.89; sensitivity: 95%; specificity: 40.4%) compared with LR models (AUC: 0.7–0.718; sensitivity: 0.006–0.011; specificity: 0.998–0.999). SHAP analysis identified 14 key risk factors, and retraining ML models on this subset yielded only a modest (p-value<0.001) decline in performance (AUC: 0.84; sensitivity: 90.3%; specificity: 40.8%).
 Conclusion: Explainable ML models incorporating an optimized combination of risk factors outperform traditional LR approaches for CVD risk prediction in Middle Eastern populations.
 Keywords: Cardiovascular diseases; Machine learning; Explainable artificial intelligence; Risk prediction; Cohort study; Middle Eastern population
+For more info: Dehghanit@mums.ac.ir; edu.dehghani@gmail.com
