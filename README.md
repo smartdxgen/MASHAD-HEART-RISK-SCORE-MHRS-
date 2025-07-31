@@ -23,11 +23,28 @@ This repository hosts the code and resources for a study comparing Explainable A
   year={2025}
 }
 ```
+## Usage
+**Dependencies**: Python 3.8+, scikit-learn, catboost, shap, pandas.
+**Reproducing Results**:jupyter notebook notebooks/2_model_training.ipynb
+**Key Functions**  **1. Data Preprocessing** ml_preprocessing_spliting(): Prepares data with SMOTE oversampling for handling class imbalance;Handles missing values, splits data into train/test sets; 
+Applies SMOTE oversampling and feature scaling; One-hot encodes categorical variables; ml_preprocessing_spliting_no_smote(): Similar preprocessing without SMOTE. ** 2. Model Comparison** model_comparison(): Uses PyCaret to compare multiple classification models; Includes Decision Trees, Random Forest, KNN, Gradient Boosting, AdaBoost, CatBoost, Logistic Regression, and SVM; Generates performance metrics and visualizations (AUC, Precision-Recall curves, feature importance). ** 3. Model Evaluation ** ml_metrics(): Calculates comprehensive performance metrics; AUC, confusion matrix, precision, recall, F1-score, MCC, Cohen's kappa; Plots ROC curves and finds optimal classification threshold. ** 4. Visualization ** draw_heatmap(): Creates correlation heatmaps of features; Helps identify relationships between variables. **5. Model Saving ** save_model_information(): Stores model performance metrics for later comparison
+
+## Workflow Steps
+**Load and Explore Data**: The notebook loads cardiovascular health data with features like age, blood pressure, cholesterol levels, etc.
+**Basic data exploration** shows the distribution of cardiovascular events
+**Preprocess Data** Choose between SMOTE or non-SMOTE preprocessing based on your needs-Handles missing values, scales features, encodes categorical variables
+**Compare Models** Use PyCaret's automated model comparison to identify top-performing algorithms
+**Visualize model performance metrics** 
+**Evaluate Best Model** Generate detailed performance metrics for the selected model-Analyze confusion matrix and ROC curves-
+**Visualize Feature Relationships**  Examine correlations between features using heatmaps
+
 ## 📧 Contact
 For collaborations and inquiries:  
 [Dehghanit@mums.ac.ir](mailto:Dehghanit@mums.ac.ir) | [edu.dehghani@gmail.com](mailto:edu.dehghani@gmail.com)
 
 **Keywords**: Cardiovascular Risk Prediction · Explainable AI · Middle Eastern Population · Machine Learning · Clinical Decision Support
-![cvd (1)](https://github.com/user-attachments/assets/014106c6-e136-44f2-9c40-13b92b479aa0)
+
+#CardioRiskPrediction #ExplainableAI #MachineLearning #MiddleEastHealth #PreventiveMedicine #SHAP #CatBoost #ClinicalAI
+
 
 
