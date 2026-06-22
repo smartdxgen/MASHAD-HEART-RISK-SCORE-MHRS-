@@ -1,38 +1,11 @@
-## MASHAD-HEART-RISK-SCORE-MHRS-
-## XAI for Cardiovascular Risk Prediction in Middle Eastern Populations
-## Enhancing Cardiovascular Risk Prediction in Middle Eastern Populations: Explainable AI vs Conventional Models
+## Explainable AI for Cardiovascular Risk Prediction in Middle Eastern Populations
+Background: Contemporary cardiovascular risk prediction tools, including ASCVD, SCORE2, and Framingham scores, rely mainly on multivariable regression models and often assume linear relationships between risk factors and cardiovascular disease (CVD) events. These assumptions may limit their performance in populations with distinct cardiometabolic and demographic characteristics, such as Middle Eastern populations.
+Objective: This study aimed to identify the optimal combination of risk factors derived from ASCVD, SCORE2, and Framingham scores and to compare logistic regression (LR) with machine learning (ML) models for CVD risk prediction in a Middle Eastern cohort.
+Methods: Data from 9,489 participants in the Mashhad Stroke and Heart Atherosclerotic Disorder (MASHAD) cohort were analyzed. Risk factors derived from ASCVD, SCORE2, and Framingham scores were used to train LR and ML models. Different predictor sets were evaluated, including score-specific and comprehensive combinations of modified risk factors. Model performance was assessed using the area under the receiver operating characteristic curve (AUC), sensitivity, and specificity. Shapley Additive exPlanations (SHAP) were applied to interpret the best-performing ML model and identify key predictors. An additional ML model was then retrained using the 15 most important SHAP-derived predictors.
+Results: CatBoost, demonstrated better predictive performance than other ML models, conventional LR models, and standard cardiovascular risk prediction tools, including ASCVD-, SCORE2-, and Framingham-derived approaches. CatBoost substantially outperformed LR, with an AUC of 0.945 versus 0.771, sensitivity of 82.8% versus 69.8%, and specificity of 96.9% versus 70.2%, respectively. The SHAP-based reduced ML model using the most important predictors showed comparable but lower performance than the comprehensive model, with an AUC of 0.916, sensitivity of 74.5%, and specificity of 95.3%.
+Conclusion: In this Middle Eastern cohort, comprehensive risk-factor integration with ML, particularly CatBoost, improved CVD risk prediction compared with conventional LR and standard risk prediction tools. However, this single-center cohort design may limit generalizability; therefore, external validation in independent, multicenter populations is required before clinical implementation.
+Keywords: Cardiovascular diseases; Machine learning; Explainable artificial intelligence; Risk prediction; Cohort study; Middle Eastern population
 
-## Overview
-This repository hosts the code and resources for a study comparing Explainable AI (XAI) techniques with conventional logistic regression models to predict 10-year cardiovascular disease (CVD) risk in Middle Eastern populations. The study leverages data from the Mashhad Stroke and Heart Atherosclerotic Disorder (MASHAD) cohort and demonstrates the superiority of machine learning (CatBoost) in capturing non-linear interactions among risk factors.
-
-## Key Features
-**Comparative Analysis**:Evaluates logistic regression (LR) against six ML models (CatBoost, Random Forest, etc.).
-**Best-performing model**: CatBoost (AUC: 0.89) vs. LR (AUC: 0.70–0.72).
-**Explainable AI (XAI) Integration**: Uses SHAP (SHapley Additive exPlanations) to interpret model decisions and identify top risk factors (e.g., age-diabetes interactions, systolic blood pressure). Provides visualizations (force plots, summary plots) for clinical transparency.
-**Optimized Feature Selection**: Reduces 33 risk factors to 14 SHAP-derived features with minimal performance drop (AUC: 0.84).
-**Clinical Applicability**: Case studies illustrate high/low-risk predictions with actionable insights for cardiologists.
-
-![cvd (1)](https://github.com/user-attachments/assets/b5018186-dd9a-410f-b095-a07e018482ec)
-
-## 📜 Citation
-```bibtex
-@article{mhrs2025,
-  title={Enhancing Cardiovascular Risk Prediction in Middle Eastern Populations: Explainable AI vs Conventional Models},
-  author={Baniasadi, A, Dehghani, T. et al.},
-  journal={Under Review},
-  year={2025}
-}
-```
-## Usage
-### Dependencies: Python 3.8+, scikit-learn, catboost, shap, pandas.
-### Reproducing Results:jupyter notebook notebooks/2_model_training.ipynb
-### Key Functions  
-**1. Data Preprocessing** ml_preprocessing_spliting(): Prepares data with SMOTE oversampling for handling class imbalance;Handles missing values, splits data into train/test sets; 
-Applies SMOTE oversampling and feature scaling; One-hot encodes categorical variables; ml_preprocessing_spliting_no_smote(): Similar preprocessing without SMOTE. 
-**2. Model Comparison** model_comparison(): Uses PyCaret to compare multiple classification models; Includes Decision Trees, Random Forest, KNN, Gradient Boosting, AdaBoost, CatBoost, Logistic Regression, and SVM; Generates performance metrics and visualizations (AUC, Precision-Recall curves, feature importance). 
-**3. Model Evaluation** ml_metrics(): Calculates comprehensive performance metrics; AUC, confusion matrix, precision, recall, F1-score, MCC, Cohen's kappa; Plots ROC curves and finds optimal classification threshold. 
-**4.Visualization** draw_heatmap(): Creates correlation heatmaps of features; Helps identify relationships between variables. 
-**5. Model Saving** save_model_information(): Stores model performance metrics for later comparison
 
 ## 📧 Contact
 For collaborations and inquiries:  
